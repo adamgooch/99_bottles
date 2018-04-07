@@ -10,14 +10,9 @@ class Bottles
     result = "#{verse(first_verse_bottles)}\n"
     next_number = first_verse_bottles - 1
     if next_number > last_verse_bottles
-      result += "#{verse(first_verse_bottles - 1)}"
-    else
-      result += "#{verse(second_verse_bottles)}"
+      result += "#{verse(first_verse_bottles - 1)}\n"
     end
-    puts '*******************************'
-    puts "result: #{result.inspect}"
-    puts '*******************************'
-
+    result += "#{verse(last_verse_bottles)}"
     result
   end
 
