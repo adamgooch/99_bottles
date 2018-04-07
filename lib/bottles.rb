@@ -7,13 +7,18 @@ class Bottles
   end
 
   def verses(first_verse_bottles, last_verse_bottles)
-    result = "#{verse(first_verse_bottles)}\n"
-    next_number = first_verse_bottles - 1
-    if next_number > last_verse_bottles
-      result += "#{verse(first_verse_bottles - 1)}\n"
+    current_bottles = first_verse_bottles
+    result = "#{verse(current_bottles)}\n"
+    while(current_bottles > last_verse_bottles)
+      current_bottles = current_bottles - 1
+      result += "#{verse(current_bottles)}"
+      result += "\n" if current_bottles > last_verse_bottles
     end
-    result += "#{verse(last_verse_bottles)}"
     result
+  end
+
+  def song
+    verses(99, 0)
   end
 
   private
